@@ -13,7 +13,6 @@ A minimal, single-page portfolio template built with Next.js (App Router) and Ty
 - Next.js 15 (App Router)
 - React 19 + TypeScript
 - Plain CSS (global)
-- Adobe Fonts (Neue Haas Grotesk Display) via Typekit
 
 ## Getting Started
 
