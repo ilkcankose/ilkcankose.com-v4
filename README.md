@@ -13,6 +13,7 @@ A minimal, single-page portfolio template built with Next.js (App Router) and Ty
 - Next.js 15 (App Router)
 - React 19 + TypeScript
 - Plain CSS (global)
+- Inter via `next/font/google`
 
 ## Getting Started
 
@@ -28,4 +29,4 @@ Open [http://localhost:3000](http://localhost:3000).
 - **Sidebar content** — edit `app/page.tsx` (name, socials, bio).
 - **Projects** — edit the `projects` array in `app/page.tsx`. Drop images into `public/` and reference by path.
 - **Styling** — `app/globals.css`.
-- **Font** — replace the Typekit `<link>` in `app/layout.tsx` with your own kit.
+- **Font** — swap Inter in `app/layout.tsx` for any other `next/font/google` family.
