@@ -1,0 +1,268 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  letter-spacing: 0;
+}
+
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: "neue-haas-grotesk-display", "Neue Haas Grotesk Display Pro",
+    "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: #ffffff;
+  color: #000000;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a,
+button {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover,
+button:hover {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.layout {
+  display: flex;
+  align-items: stretch;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* Fixed sidebar — locked to viewport height */
+.sidebar {
+  flex: 0 0 329px;
+  width: 329px;
+  height: 100vh;
+  padding: 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #ffffff;
+  border-right: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.nameBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.name {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: #000;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 8px;
+  font-size: 12px;
+  line-height: 1.4;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.socialLinks a {
+  white-space: nowrap;
+}
+
+.bioBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.bio p {
+  font-size: 16px;
+  line-height: 1.4;
+  color: #000;
+}
+
+.bio p + p {
+  margin-top: 1.4em;
+}
+
+.year {
+  font-size: 12px;
+  line-height: 1.4;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+/* Scrollable right side */
+.works {
+  flex: 1 1 0;
+  min-width: 0;
+  height: 100vh;
+  overflow-y: auto;
+  padding: 64px 128px;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+.workItem {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+.workHeader {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  width: 100%;
+  gap: 16px;
+}
+
+.workTitle {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #000;
+  white-space: nowrap;
+}
+
+.arrow {
+  width: 12px;
+  height: 12px;
+  display: block;
+}
+
+.tags {
+  display: flex;
+  gap: 8px;
+  font-size: 12px;
+  line-height: 1.4;
+  color: rgba(0, 0, 0, 0.4);
+  white-space: nowrap;
+}
+
+.workImageFrame {
+  width: 100%;
+  aspect-ratio: 854 / 464;
+  overflow: hidden;
+  position: relative;
+}
+
+.workImageFrame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.projectImages {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.mainProjectImage {
+  width: 100%;
+  aspect-ratio: 3236 / 1688;
+  overflow: hidden;
+}
+
+.mainProjectImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.additionalImages {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+}
+
+.additionalImage {
+  flex: 1 1 0;
+  min-width: 0;
+  aspect-ratio: 2048 / 1068;
+  overflow: hidden;
+}
+
+.additionalImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.works::-webkit-scrollbar {
+  width: 8px;
+}
+.works::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+}
+.works::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Mobile — stack vertically, single page scroll */
+@media (max-width: 768px) {
+  html,
+  body {
+    overflow: auto;
+    height: auto;
+  }
+
+  .layout {
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+  }
+
+  .sidebar {
+    flex: none;
+    width: 100%;
+    height: auto;
+    padding: 32px 24px;
+    gap: 32px;
+    border-right: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  }
+
+  .works {
+    flex: none;
+    width: 100%;
+    height: auto;
+    overflow: visible;
+    padding: 32px 24px 64px;
+    gap: 48px;
+  }
+
+  .workHeader {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .tags {
+    flex-wrap: wrap;
+    white-space: normal;
+  }
+
+  .additionalImages {
+    flex-direction: column;
+  }
+}
